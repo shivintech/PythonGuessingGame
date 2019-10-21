@@ -3,11 +3,8 @@
 A simple program that plays Shannon's Game.
 Students are to complete FrequencyList's methods and then use this class to decide what guesses should be made while playing Shannon's Shannon's Game.
 
-Please enter your name and student number below!
 
-PLEASE READ THROUGH ALL THE COMMENTS FOR INSTRUCTIONS!
-
-Author:
+Author:Shivin Gaba
 Date:
 """
 import doctest
@@ -64,7 +61,7 @@ class FrequencyList:
         even if you do not complete that task can you think of why this could help improve performance when the
         list is used in Shannon's Game?
 
-        YOU MUST write some more doctests for this method.
+        
 
         >>> test = FrequencyList()
         >>> test.add('a', 3)
@@ -77,7 +74,7 @@ class FrequencyList:
         >>> test
         FrequencyNode List -> FrequencyNode('a', 3) -> FrequencyNode('b', 3) -> None
         """
-        # ---start student section---
+   
         current = self.head
         previous = None
         if self.head == None: 
@@ -106,7 +103,7 @@ class FrequencyList:
         >>> f
         FrequencyNode List -> FrequencyNode('a', 3) -> FrequencyNode('b', 2) -> FrequencyNode('c', 3) -> None
         """
-        # ---start student section---
+       
         current = self.head 
         previous = None        
         if current == None: 
@@ -138,14 +135,14 @@ class FrequencyList:
         >>> f.find('b')
 
         """
-        # ---start student section---
+       
         current = self.head 
         while current != None:
             if current.letter == letter:
                 return current 
             else:
                 current = current.next_node 
-        # ===end student section===
+        
 
     def __contains__(self, item):
         """ Returns True if item is in this FrequencyList
@@ -176,7 +173,7 @@ class FrequencyList:
         >>> len(f)
         3
         """
-        # ---start student section---
+        
         length = 0 
         current = self.head 
         if current == None: 
@@ -187,7 +184,7 @@ class FrequencyList:
                 current = current.next_node
                 length += 1
             return length 
-        # ===end student section===
+       
 
     def __repr__(self):
         """ Returns a string representation of the list in the form
@@ -226,7 +223,7 @@ def get_prediction_list(corpus, last):
     >>> get_prediction_list('pitter pattor batt', 'er')
     [' ']
     """
-    # ---start student section--- ASK LIAM FOR EXPLANATION 
+     
     
     new = []
     for i in range(0, len(corpus)): 
@@ -236,7 +233,7 @@ def get_prediction_list(corpus, last):
                 new.append(letter) 
     return new 
             
-    # ===end student section===
+    
 
 
 def count_frequencies(items):
@@ -266,13 +263,13 @@ def count_frequencies(items):
     FrequencyNode('f', 1)
     FrequencyNode('g', 1)
     """
-    # ---start student section---
+  
     freq_list = FrequencyList() 
     for letter in items:
         freq_list.add(letter, frequency=1)
     return freq_list 
         
-    # ===end student section===
+    
 
 
 def select_next_guess(possibles):
@@ -295,11 +292,11 @@ def select_next_guess(possibles):
     >>> select_next_guess(p)
     'b'
     """
-    # ---start student section---
+    
     calling = count_frequencies(possibles)
     return calling 
         
-    # ===end student section===
+   
 
 
 
